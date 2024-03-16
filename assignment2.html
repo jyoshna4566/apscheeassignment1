@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<!-- saved from url=(0046)http://127.0.0.1:5501/assignment2.html#contact -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Responsive Portfolio</title>
+<style>
+  :root {
+    --primary-color: #3498db;
+    --secondary-color: #2ecc71;
+  }
+
+  body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+  }
+
+  header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 1rem;
+    text-align: center;
+  }
+
+  nav {
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+    background-color: var(--secondary-color);
+  }
+
+  nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 1rem;
+    transition: color 0.3s ease;
+  }
+
+  nav a:hover {
+    color: #333;
+  }
+
+  .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 1rem;
+    transition: transform 0.3s ease;
+  }
+
+  .card:hover {
+    transform: translateY(-5px);
+  }
+
+  footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+  }
+
+  @media (max-width: 768px) {
+    nav {
+      flex-direction: column;
+    }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>My Portfolio</h1>
+</header>
+
+<nav>
+  <a href="http://127.0.0.1:5501/assignment2.html#projects">Projects</a>
+  <a href="http://127.0.0.1:5501/assignment2.html#about">About</a>
+  <a href="http://127.0.0.1:5501/assignment2.html#contact">Contact</a>
+</nav>
+
+<div class="container">
+  <div class="card" id="projects">
+    <h2>Projects</h2>
+    <p>Project details...</p>
+  </div>
+  <div class="card" id="about">
+    <h2>About Me</h2>
+    <p>About me details...</p>
+  </div>
+  <div class="card" id="contact">
+    <h2>Contact</h2>
+    <p>Contact details...</p>
+  </div>
+</div>
+
+<footer>
+  <p>© 2024 Your Name</p>
+</footer>
+
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+
+
+</body></html>
